@@ -63,6 +63,4 @@ circle(115, 260, circleSize)
   elseif circleSize < 50 then
     growing = true
   end
-  fill(0)
-  text("X: "..mouseX.."  Y: "..mouseY, mouseX+5,mouseY+30)
 end
