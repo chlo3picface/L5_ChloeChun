@@ -1,82 +1,81 @@
-require("L5-main.L5")
+require("L5")
+
+myPixels = {}
 
 function setup()
-  size(400, 600)
+  size(1000, 1000)
+  angleMode(DEGREES)
+  windowTitle("Homework 5 Chloe Chun")
 
-  -- Set the program title
-  windowTitle("Homework 1 Chloe Chun")
+  -- Describe the visual output
+  describe('Draws cityscape')
 
-  describe('Draws a tree in snow')
 end
 
 function draw()
-    background(122, 194, 214)
- 
-    -- base of igloo
-stroke(157, 189, 196)
-strokeWeight(4)
-fill(204, 225, 230)
-ellipse(350, 365, 185, 150)
+  background(120, 156, 152)
+  noStroke()
+-- shadow of building 1
+fill(74, 79, 78)
+rect(width*0.20, height*0.30, width/8, height/0.5)
+-- front building 1
+fill(107, 115, 114)
+rect(width*0.21, height*0.32, width/8, height/0.5)
 
--- igloo entrance
-stroke(157, 189, 196)
-strokeWeight(4)
-fill(204, 225, 230)
-rect(237, 340, 100, 70, 20)
- 
--- igloo entrance detail
-    noStroke()
-fill(157, 189, 196)
-rect(260, 356, 55, 70, 10)
+-- building shadow 2
+fill(74, 79, 78)
+rect(width*0.03, height*0.55, width/8, height/2)
+-- building 2
+ fill(107, 115, 114)
+rect(width*0.04, height*0.551, width/8, height/2)
 
-  -- Fills the ground with an icy blue color
-  fill(204, 225, 230)
-  rect(0, 391, 1200, 600)
-  
-noStroke()
--- dark brown trunk 
-fill(110, 68, 48)
-triangle(155, 500, 235, 500, 195, 340)
+-- shadow of building 3
+fill(74, 79, 78)
+rect(width*0.38, height*0.4, width/6, height/2)
 
--- lighter brown trunk
-fill(122, 83, 64)
-triangle(155, 500, 210, 500, 180, 400)
+-- building 3
+fill(107, 115, 114)
+rect(width*0.39, height*0.41, width/6, height/2)
 
--- bottom dark green tree tier
-fill(0, 51, 1)
-triangle(110, 450, 280, 450, 190, 280)
+-- shadow of building 4
+fill(74, 79, 78)
+rect(width*0.6, height*0.5, width/8, height/2)
 
--- white on green tier
-fill(186, 206, 209)
-triangle(130, 399, 255, 399, 195, 280)
+-- building 4
+fill(107, 115, 114)
+rect(width*0.61, height*0.51, width/8, height/2)
 
--- middle white tree tier
-fill(211, 225, 227)
-triangle(110, 360, 270, 360, 195, 177)
+-- shadow of building 5
+fill(74, 79, 78)
+rect(width*0.8, height*0.3, width/6, height/2)
 
--- top white tree tier
-fill(211, 225, 227)
-triangle(140, 270, 250, 270, 195, 130)
+-- building 6
+fill(107, 115, 114)
+rect(width*0.81, height*0.31, width/6, height/2)
 
--- snowflakes
-fill(225, 239, 240)
-circle(47, 59, 10)
+  -- ground layer  
+fill(49, 117, 55)
+rect(0, height*0.8, width/1)
 
-fill(225, 239, 240)
-circle(307, 30, 20)
+-- sidewalk layer
+fill(150, 131, 89)
+rect(0, height*0.85, width/1)
 
-fill(225, 239, 240)
-circle(340, 90, 10)
+-- top grass layer
+fill(66, 130, 71)
+rect(0, height*0.95, width/1)
 
-fill(225, 239, 240)
-circle(204, 66, 15)
+-- cloud mouse
 
-fill(225, 239, 240)
-circle(98, 134, 8)
+  -- user defined variables
+  circleX = 100
+  circleY = 100
 
-fill(225, 239, 240)
-circle(291, 157, 4)
+fill(237, 237, 237)  
+ellipse(mouseX,mouseY,circleX,circleY)
+ellipse(mouseX-60,mouseY-25,circleX,circleY)
+ellipse(mouseX-80,mouseY+40,circleX,circleY)
+ellipse(mouseX-50, mouseY-40, circleX, circleY)
+ellipse(mouseX+50, mouseY-45, circleX, circleY)
 
 end
-
-
