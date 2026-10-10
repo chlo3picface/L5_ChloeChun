@@ -1,82 +1,75 @@
-require("L5-main.L5")
+require("L5")
 
 function setup()
-  size(400, 600)
-
-  -- Set the program title
-  windowTitle("Homework 1 Chloe Chun")
-
-  describe('Draws a tree in snow')
+  size(600, 400)
+  angleMode(DEGREES)
+  rectMode(CENTER)
+  noStroke()
+  windowTitle("Homework 7 Chloe Chun")
+  describe('White screen with green and blue circles')
+  background(255)
+  textSize(20)
+  textAlign(CENTER)
 end
 
+-- 1st for loop (grid)
 function draw()
-    background(122, 194, 214)
+ -- middle line
+  stroke(0)
+  strokeWeight(3)
+  line(width/2,0,width/2,height)
+  noStroke()
+  -- set initial values
+  x = 65
+  y = 65
+
  
-    -- base of igloo
-stroke(157, 189, 196)
-strokeWeight(4)
-fill(204, 225, 230)
-ellipse(350, 365, 185, 150)
+  for i = 1, 36, 1 do
 
--- igloo entrance
-stroke(157, 189, 196)
-strokeWeight(4)
-fill(204, 225, 230)
-rect(237, 340, 100, 70, 20)
- 
--- igloo entrance detail
-    noStroke()
-fill(157, 189, 196)
-rect(260, 356, 55, 70, 10)
+    if i%2 == 0 then
+      fill(255, 72, 176)
+    else
+      fill(0, 120, 191)
+    end
 
-  -- Fills the ground with an icy blue color
-  fill(204, 225, 230)
-  rect(0, 391, 1200, 600)
-  
-noStroke()
--- dark brown trunk 
-fill(110, 68, 48)
-triangle(155, 500, 235, 500, 195, 340)
+    -- a rectangle is drawn
+    rect(x,y,30,30)
 
--- lighter brown trunk
-fill(122, 83, 64)
-triangle(155, 500, 210, 500, 180, 400)
+    -- this does the same as above but switches the black and white
+    if i%2 == 0 then
+      fill(0, 120, 191)
+    else
+      fill(255, 72, 176)
+    end
 
--- bottom dark green tree tier
-fill(0, 51, 1)
-triangle(110, 450, 280, 450, 190, 280)
+    -- an rectangle is drawn in the opposite color
+    rect(x,y,10,10)
 
--- white on green tier
-fill(186, 206, 209)
-triangle(130, 399, 255, 399, 195, 280)
+    -- this advances the y value
+    y = y + 34;
 
--- middle white tree tier
-fill(211, 225, 227)
-triangle(110, 360, 270, 360, 195, 177)
+    -- when the y value gets to my desires height, it resets and moves the x
+    -- this can also be done by nesting for loops
+    if y >= 350 then
+      y = 65;
+      x = x + 34;
+    end
+  end
 
--- top white tree tier
-fill(211, 225, 227)
-triangle(140, 270, 250, 270, 195, 130)
+  -- 2nd for loop (random circles)
+  function draw()
+    strokeWeight(3)
+    stroke(51)
+      frameRate(9)
+  for i = 1, 3, 1 do
+    x = random(300, 600)
+    y = random(50, 400)
+    size = random(5, 25)
+    fill(random(255, 232, 0), random(255, 72, 176), random(0, 120, 191))
+    circle(x, y, size)
 
--- snowflakes
-fill(225, 239, 240)
-circle(47, 59, 10)
-
-fill(225, 239, 240)
-circle(307, 30, 20)
-
-fill(225, 239, 240)
-circle(340, 90, 10)
-
-fill(225, 239, 240)
-circle(204, 66, 15)
-
-fill(225, 239, 240)
-circle(98, 134, 8)
-
-fill(225, 239, 240)
-circle(291, 157, 4)
-
+    fill(0)
+  text("Homework 7 Chloe Chun:", width/2,30)
+  end
 end
-
-
+end
